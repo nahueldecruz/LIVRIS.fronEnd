@@ -77,12 +77,11 @@ class ReviewsService {
             body: JSON.stringify(review)
         })
         const responseData = await responseHttp.json()
-        console.log(responseData)
 
         if(!responseData.ok){
             throw responseData
         }
-        console.log(responseData)
+        
         return responseData
     }
 }
