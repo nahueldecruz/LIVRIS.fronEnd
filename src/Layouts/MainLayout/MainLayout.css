@@ -1,0 +1,11 @@
+.main__layout {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.main__content {
+    margin-top: 5rem;
+    overflow-y: auto;
+    width: 100%;
+}

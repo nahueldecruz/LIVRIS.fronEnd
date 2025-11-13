@@ -1,0 +1,98 @@
+.book-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--border-rad-l);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    width: 30%;
+    text-decoration: none;
+    aspect-ratio: 2 / 4;
+    background-color: var(--color-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 0;
+}
+
+.book-card__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    overflow: hidden;
+}
+
+.book-card__image {
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.book-card:hover .book-card__image {
+    transform: scale(1.03);
+}
+
+.book-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.25);
+}
+
+.book-card__info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.book-card__title {
+    font-size: var(--font-sz-xm);
+    font-family: var(--font-fm-serif);
+    color: var(--color-dark);
+}
+
+.book-card__author {
+    font-size: var(--font-sz-x);
+    color: var(--color-gray);
+    font-weight: 500;
+}
+
+.book-card__category {
+    background-color: #ffedd6;
+    border-radius: var(--border-rad);
+    border: 1px solid #ffd8ab;
+    color: #c45612;
+    font-size: var(--font-sz-x);
+    width: 10rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.book-card__rating {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.book-card__icon-star {
+    color: var(--color-gray);
+    fill: var(--color-gray-light);
+}
+
+.bci--gold {
+    color: var(--color-golden);
+    fill: var(--color-golden);
+}
+
+.book-card__rating-average {
+    font-size: var(--font-sz-x);
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.book-card__rating-reviews {
+    font-size: var(--font-sz-xs);
+    color: var(--color-gray);
+}

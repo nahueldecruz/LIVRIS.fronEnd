@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-light);
+    padding: 1.5rem;
+    position: fixed;
+    width: 100%;
+    background-color: var(--color-light);
+    z-index: 1000;
+}
+
+.header__button {
+    cursor: pointer;
+    font-size: var(--font-sz-x);
+    background-color: var(--color-light);
+    border: none;
+    font-size: var(--font-sz-xl);
+}
+
+.header__title {
+    font-size: var(--font-sz-l);
+    color: var(--color-primary);
+    font-family: var(--font-fm-serif);
+}

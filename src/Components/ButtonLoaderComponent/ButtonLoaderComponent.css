@@ -1,0 +1,33 @@
+.loading-button {
+    font-size: var(--font-sz-xl);
+    padding: 1rem 0.625rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-rad);
+    border: var(--border);
+    cursor: pointer;
+    color: var(--color-gray);
+    animation: colorChange 2s ease-in-out infinite, textPulse 2s ease-in-out infinite;
+    transition: transform 0.2s;
+}
+
+@keyframes colorChange {
+    0%,
+    100% {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+    50% {
+        border-color: var(--color-gray);
+        color: var(--color-gray);
+    }
+}
+
+@keyframes textPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}

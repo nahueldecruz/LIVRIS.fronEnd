@@ -1,0 +1,91 @@
+.button-add-review {
+    border: 1px solid var(--color-secondary-light);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: var(--border-rad-l);
+    box-shadow: var(--box-shadow);
+}
+
+.button-add-review__container {
+    border: none;
+    background-color: var(--color-secondary);
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--border-rad-l);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.button-add-review__icon{
+    color: var(--color-light);
+}
+
+.button-add-review__span{
+    font-weight: 500;
+    color: var(--color-light);
+}
+
+.button-add-review__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.button-add-review__form__label {
+    font-size: var(--font-sz-s);
+    font-weight: 500;
+    color: var(--color-gray-dark);
+}
+
+.button-add-review__form__input {
+    min-height: 8rem;
+    border-radius: var(--border-rad);
+    border: 1px solid var(--color-gray-light);
+    padding: 0.5rem;
+}
+
+.button-add-review__form__input:focus {
+    outline: none;
+    border-color: var(--color-secondary-light);
+}
+
+.button-add-review__form__input::placeholder {
+    font-size: var(--font-sz-s);
+    color: var(--color-gray);
+}
+
+.button-add-review__form__buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.3rem;
+}
+
+.button-add-review__form__button {
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: var(--border-rad-l);
+    border: 1px solid var(--color-gray-light);
+    background: none;
+    font-weight: 500;
+    color: var(--color-gray-dark);
+    box-shadow: var(--box-shadow);
+}
+
+.bar--submit {
+    width: 70%;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+}
+
+.bar--submit:disabled {
+    background-color: var(--color-secondary-light);
+    color: var(--color-light);
+}

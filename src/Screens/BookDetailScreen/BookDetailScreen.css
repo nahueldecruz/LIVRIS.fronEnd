@@ -1,0 +1,12 @@
+.book-detail-screen {
+    padding: 1rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.book-detail-screen__reviews {
+    font-size: var(--font-sz-2xl);
+    font-family: var(--font-fm-serif);
+    color: var(--color-dark);
+}

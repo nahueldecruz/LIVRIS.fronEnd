@@ -1,0 +1,37 @@
+.verified-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.verified-screen__container {
+    width: 35rem;
+    border: var(--border);
+    border-radius: var(--border-rad);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.verified-screen__title {
+    font-size: var(--font-sz-2xl);
+    font-family: var(--font-fm-serif);
+    color:var(--color-dark);
+    color:var(--color-primary);
+}
+
+.verified-screen__link {
+    border: var(--border);
+    border-color: var(--color-primary);
+    padding: 0.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    border-radius: var(--border-rad);
+    width: 10rem;
+    text-align: center;
+}

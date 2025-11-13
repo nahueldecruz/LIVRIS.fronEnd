@@ -1,0 +1,32 @@
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.reviews-list__message-empty{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--border-rad-l);
+    width: 100%;
+    padding: 2rem 0;
+    box-shadow: var(--box-shadow);
+    gap: 0.5rem;
+}
+.reviews-list__message__icon{
+    width: 4rem;
+    height: 4rem;
+    color: var(--color-gray);
+}
+.reviews-list__message__sub-title{
+    font-size: var(--font-sz-l);
+    font-family: var(--font-fm-serif);
+    color: var(--color-gray);
+}
+.reviews-list__message__span{
+    font-size: var(--font-sz-l);
+    color: var(--color-gray-light);
+}

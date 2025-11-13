@@ -1,0 +1,17 @@
+.star-rating-input {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.star-rating-input__star {
+    font-size: var(--font-sz-xs);
+    color: var(--color-gray);
+    fill: var(--color-gray-light);
+    transition: 0.1s;
+}
+
+.sri--gold {
+    color: var(--color-golden);
+    fill: var(--color-golden);
+    scale: 1.02;
+}

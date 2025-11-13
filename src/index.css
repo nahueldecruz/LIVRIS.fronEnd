@@ -1,0 +1,42 @@
+:root {
+    --font-sz-xs: 0.75rem; /* 12px */
+    --font-sz-s: 0.875rem; /* 14px */
+    --font-sz-m: 1rem; /* 16px */
+    --font-sz-xm: 1.125rem; /* 18px */
+    --font-sz-l: 1.25rem; /* 20px */
+    --font-sz-xl: 1.5rem; /* 24px */
+    --font-sz-2xl: 2rem; /* 32px */
+    --font-sz-3xl: 3rem; /* 48px */
+
+    --font-fm-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    --border-rad: 0.4rem;
+    --border-rad-l: 0.7rem;
+    --border: 1px, solid, rgba(0, 0, 0, 0.5);
+
+    --color-primary-light: #8f98e7;
+    --color-primary: #5565EB;
+    --color-primary-dark: #404aa1;
+    --color-secondary-light: #b09df5;
+    --color-secondary: #7353e6;
+    --color-secondary-dark: #2d215a;
+    --color-error: #DB585B;
+    --color-success: #3ee46d;
+    --color-dark: #292524;
+    --color-gray-light: #cacaca;
+    --color-gray: #8b8b8b;
+    --color-gray-dark: #5a5a5a;
+    --color-light: #ffffff;
+    --color-golden: #e4c723;
+
+    --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --box-shadow-strong: 3px 10px 20px 10px rgb(0 0 0 / 0.1);
+}
+
+* {
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+}

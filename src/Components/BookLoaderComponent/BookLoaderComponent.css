@@ -1,0 +1,54 @@
+.book-loader__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.book-loader__icon-wrapper {
+  position: relative;
+}
+
+.book-loader__icon {
+  width: 4rem;
+  height: 4rem;
+  animation: spin-book 2s linear infinite, color-shift 2s ease-in-out infinite;
+}
+
+.book-loader__text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-gray);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin-book {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes color-shift {
+  0%,
+  100% {
+    color: var(--color-primary);
+  }
+  50% {
+    color: var(--color-gray);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

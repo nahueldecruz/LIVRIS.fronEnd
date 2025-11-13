@@ -1,0 +1,96 @@
+.login-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.login-screen__title {
+    font-size: var(--font-sz-2xl);
+    font-family: var(--font-fm-serif);
+    color:var(--color-dark);
+    color:var(--color-primary);
+}
+
+.login-screen__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 28rem;
+    gap: 1rem;
+    border: var(--border);
+    border-radius: var(--border-rad);
+    padding: 3rem;
+    background-color: var(--color-light);
+}
+
+.login-screen__form__input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.login-screen__form__label {
+    color:var(--color-primary);
+}
+
+.login-screen__form__input {
+    font-size: var(--font-sz-xl);
+    padding: 1rem 0.625rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-rad);
+    border: var(--border);
+    width: 100%;
+}
+
+.login-screen__form__label:hover {
+    cursor: pointer;
+}
+
+.login-screen__form__input:focus {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    outline: none;
+}
+
+.login-screen__error {
+    color: var(--color-error);
+    align-self: center;
+    font-size: var(--font-sz-x);
+}
+
+.login-screen__form__button{
+    cursor: pointer;
+    font-size: var(--font-sz-xl);
+    padding: 1rem 0.625rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-rad);
+    border: var(--border);
+}
+
+.login-screen__form__button:not(:disabled):hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.login-screen__form__link-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-screen__form__span {
+    color: var(--color-success);
+    align-self: center;
+    font-size: var(--font-sz-m);
+}
+
+.login-screen__form__link {
+    border: var(--border);
+    border-color: var(--color-primary);
+    padding: 0.4rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    border-radius: var(--border-rad);
+}
