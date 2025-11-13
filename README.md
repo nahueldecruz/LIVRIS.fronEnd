@@ -1,33 +1,38 @@
 # LIVRIS
 
-## DESCRIPCION
+## Descripción
 
-    - "LiVris": Es una red social hecha para lectores donde podrán interactuar con los libros obtenidos por la aplicacion de Google Books APIs, agregandolos a sus listas, para mostrar sus lecturas actuales, las que ya finalizó o las que quiere hacer. 
-        - La forma de interactuar entre los usuarios es mediante los comentarios en las reseñas que dejan en los libros, agregandose como amigos.
+"LiVris" es una red social hecha para lectores, donde podrán interactuar con los libros obtenidos mediante la API de Google Books. Los usuarios pueden agregarlos a sus listas para mostrar sus lecturas actuales, las que ya finalizaron o las que quieren leer.  
 
-## TECNOLOGIAS UTILIZADAS:
+La interacción entre usuarios se realiza mediante comentarios en las reseñas que dejan en los libros y agregándose como amigos.
 
-    - ReactJS + JS
-        - Librerias:
-            - react-dom
-            - react-icons
-    - HTML
-    - CSS
-    - Vite
+## Tecnologías utilizadas
 
-## FUNCIONALIDADES EN DESARROLLO:
+- **Frontend:** ReactJS + JavaScript  
+  - Librerías:
+    - react-dom
+    - react-icons
+- HTML
+- CSS
+- Vite
 
-    - Sección "Listas de Libros": El usuario podrá guardar los distintos libros en 3 diferentes listas: "Leyendo", "Leído", y "Quiero Leer", así organiza sus interacciones con los libros, los demás usuarios podrán ver esas listas.
+## Funcionalidades en desarrollo
 
-    - "Comentarios": El usuario tendrá la posibilidad de comentar las reseñas de otros usuarios o las propias, de esa forma interactua con los demás usuarios. Más la sección comentarios del perfil del usuario donde se ven los que ha hecho en las distintas reseñas.
+- **Listas de libros:**  
+  El usuario podrá guardar libros en tres listas: "Leyendo", "Leído" y "Quiero Leer". Los demás usuarios podrán ver estas listas.  
 
-    - Sección "Comunidad": Donde se podrán encontrar los perfiles de los demas usuarios que existen en la app, ver sus perfiles, leer sus reseñas, comentarios, ver sus interacciones con los distintos libros, mandar solicitud de amistad y tambien poder bloquearlos.
+- **Comentarios:**  
+  El usuario puede comentar reseñas propias o de otros usuarios, y ver los comentarios realizados en su perfil y en distintas reseñas.  
 
-## INSTALACION: 
+- **Comunidad:**  
+  Permite encontrar otros perfiles, leer sus reseñas y comentarios, ver sus interacciones con libros, enviar solicitudes de amistad o bloquear usuarios.
 
-    1. Clona el repositorio:
-        - git clone https://github.com/nahueldecruz/LIVRIS.fronEnd.git
-    2. Instala dependencias:
-        - cd livris
-        - npm install
-    3. npm run dev
+## Instalación
+
+1. Clona el repositorio:
+   git clone https://github.com/nahueldecruz/LIVRIS.fronEnd.git
+2. Ingresa a la carpeta del proyecto
+3. Instala dependencias:
+    npm install
+4. Levanta la app:
+    npm run dev
