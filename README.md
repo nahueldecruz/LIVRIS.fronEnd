@@ -1,12 +1,12 @@
 # LIVRIS
 
-## Descripción
+## DESCRIPCIÓN
 
 "LiVris" es una red social hecha para lectores, donde podrán interactuar con los libros obtenidos mediante la API de Google Books. Los usuarios pueden agregarlos a sus listas para mostrar sus lecturas actuales, las que ya finalizaron o las que quieren leer.  
 
 La interacción entre usuarios se realiza mediante comentarios en las reseñas que dejan en los libros y agregándose como amigos.
 
-## Tecnologías utilizadas
+## TECNOLOGÍAS UTILIZADAS:
 
 - **Frontend:** ReactJS + JavaScript  
   - Librerías:
@@ -16,7 +16,7 @@ La interacción entre usuarios se realiza mediante comentarios en las reseñas q
 - CSS
 - Vite
 
-## Funcionalidades en desarrollo
+## FUNCIONALIDADES EN DESARROLLO:
 
 - **Listas de libros:**  
   El usuario podrá guardar libros en tres listas: "Leyendo", "Leído" y "Quiero Leer". Los demás usuarios podrán ver estas listas.  
@@ -27,7 +27,7 @@ La interacción entre usuarios se realiza mediante comentarios en las reseñas q
 - **Comunidad:**  
   Permite encontrar otros perfiles, leer sus reseñas y comentarios, ver sus interacciones con libros, enviar solicitudes de amistad o bloquear usuarios.
 
-## Instalación
+## INSTALACIÓN
 
 1. Clona el repositorio:
    git clone https://github.com/nahueldecruz/LIVRIS.fronEnd.git
