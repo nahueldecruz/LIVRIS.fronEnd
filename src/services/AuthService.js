@@ -30,7 +30,7 @@ class AuthService {
             password
         }
 
-        const responseHttp = await fetch(`https://livris-back-end.vercel.app/api/auth/login`, {
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/auth/login`, {
             method: HTTP_METHODS.POST,
             headers: {
                 [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON,
