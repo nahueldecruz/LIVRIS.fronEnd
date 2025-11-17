@@ -48,34 +48,35 @@ function ReviewsListComponent({ refreshKey }) {
 
     return (
         <div className='reviews-list'>
-            {
-                response?.data?.reviews.length > 0 ? (
-                    response.data.reviews.map((rev) => {
-                        return (
-                            <ReviewComponent 
-                                key={rev.review_id}
-                                rating={rev.review_rating}
-                                content={rev.review_content}
-                                createdAt={rev.review_created_at}
-                                userName={rev.user_name}
-                                userUrlImage={rev.user_url_image}
-                                bookTitle={!bookId ? rev.book_title : null}
-                            />
-                        )
-                    })
-                ) : ( bookId ? (
-                    <div className='reviews-list__message-empty'>
-                        <LuPencilLine className='reviews-list__message__icon'/>
-                        <h3 className='reviews-list__message__sub-title'>No hay reseñas para este libro</h3>
-                        <span className='reviews-list__message__span'>Sé el primero en dejar su reseña</span>
-                    </div>
-                    ) : (
+            {   loading ? <div>CARGANDOO...</div> : (
+                    response?.data?.reviews.length > 0 ? (
+                        response.data.reviews.map((rev) => {
+                            return (
+                                <ReviewComponent 
+                                    key={rev.review_id}
+                                    rating={rev.review_rating}
+                                    content={rev.review_content}
+                                    createdAt={rev.review_created_at}
+                                    userName={rev.user_name}
+                                    userUrlImage={rev.user_url_image}
+                                    bookTitle={!bookId ? rev.book_title : null}
+                                />
+                            )
+                        })
+                    ) : ( bookId ? (
                         <div className='reviews-list__message-empty'>
-                            <LuBookOpen className='reviews-list__message__icon'/>
-                            <h3 className='reviews-list__message__sub-title'>El usuario no ha dejado reseñas</h3>
-                            <span className='reviews-list__message__span'>...</span>
+                            <LuPencilLine className='reviews-list__message__icon'/>
+                            <h3 className='reviews-list__message__sub-title'>No hay reseñas para este libro</h3>
+                            <span className='reviews-list__message__span'>Sé el primero en dejar su reseña</span>
                         </div>
-                    )      
+                        ) : (
+                            <div className='reviews-list__message-empty'>
+                                <LuBookOpen className='reviews-list__message__icon'/>
+                                <h3 className='reviews-list__message__sub-title'>El usuario no ha dejado reseñas</h3>
+                                <span className='reviews-list__message__span'>...</span>
+                            </div>
+                        )      
+                    )
                 )
             }
         </div>
