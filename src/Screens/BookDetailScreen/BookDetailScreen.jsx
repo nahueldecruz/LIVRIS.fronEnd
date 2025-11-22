@@ -26,7 +26,7 @@ function BookDetailScreen() {
                 refreshKey={refreshKey}
             />
             <h4 className='book-detail-screen__reviews'>Reseñas de lectores</h4>
-            <ReviewsListComponent 
+            <ReviewsListComponent
                 refreshKey={refreshKey}
             />
         </div>

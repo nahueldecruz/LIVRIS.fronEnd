@@ -1,5 +1,5 @@
 import ENVIRONMENT from "../config/enviroment"
-import { CONTENT_TYPE_VALUES, HEADERS, HTTP_METHODS } from "../constants/http"
+import { CONTENT_TYPE_VALUES, getAuthorizationHeader, HEADERS, HTTP_METHODS } from "../constants/http"
 
 class UsersService {
     static async getById(userId) {
@@ -7,6 +7,7 @@ class UsersService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }

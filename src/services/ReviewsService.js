@@ -1,5 +1,5 @@
 import ENVIRONMENT from "../config/enviroment"
-import { CONTENT_TYPE_VALUES, HEADERS, HTTP_METHODS } from "../constants/http"
+import { CONTENT_TYPE_VALUES, getAuthorizationHeader, HEADERS, HTTP_METHODS } from "../constants/http"
 
 class ReviewsService {
 
@@ -8,6 +8,7 @@ class ReviewsService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -27,6 +28,7 @@ class ReviewsService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -47,6 +49,7 @@ class ReviewsService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -72,6 +75,7 @@ class ReviewsService {
         const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/reviews/new-review`, {
             method: HTTP_METHODS.POST,
             headers: {
+                [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                 [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
             },
             body: JSON.stringify(review)
@@ -82,6 +86,46 @@ class ReviewsService {
             throw responseData
         }
         
+        return responseData
+    }
+
+    static async updateById({ rating, content }, reviewId) {
+        const newValues = {
+            "rating": rating,
+            "content": content
+        }
+        
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/reviews/${reviewId}`, {
+            method: HTTP_METHODS.PUT,
+            headers: {
+                [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
+                [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON,
+            },
+            body: JSON.stringify(newValues)
+        })
+
+        const responseData = await responseHttp.json()
+
+        if(!responseData.ok){
+            throw responseData
+        }
+        return responseData
+    }
+
+    static async deleteById(reviewId) {
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/reviews/${reviewId}`, {
+            method: HTTP_METHODS.DELETE,
+            headers: {
+                [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
+                [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON,
+            }
+        })
+
+        const responseData = await responseHttp.json()
+
+        if(!responseData.ok){
+            throw responseData
+        }
         return responseData
     }
 }

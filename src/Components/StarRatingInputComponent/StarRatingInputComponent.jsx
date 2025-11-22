@@ -2,8 +2,8 @@ import './StarRatingInputComponent.css'
 import { useState } from "react"
 import { LuStar } from "react-icons/lu"
 
-function StarRatingInput({ onChange }) {
-    const [rating, setRating] = useState(0)
+function StarRatingInput({ onChange, initialRating }) {
+    const [rating, setRating] = useState(initialRating || 0)
     const [hover, setHover] = useState(null)
 
     const handleClick = (value) => {

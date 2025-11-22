@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LOCAL_STORAGE_KEYS from "../constants/localStorage";
 
 export const AuthContext = createContext(null);
 
@@ -12,8 +13,8 @@ export function AuthContextProvider({ children }) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        const storedToken = localStorage.getItem("authorizationToken");
+        const storedUser = localStorage.getItem('user');
+        const storedToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZATION_TOKEN);
         if (storedUser && storedToken) {
             setUser(JSON.parse(storedUser));
             setToken(storedToken);
@@ -24,15 +25,15 @@ export function AuthContextProvider({ children }) {
     const login = ({ userData, userToken }) => {
         setUser(userData);
         setToken(userToken);
-        localStorage.setItem("user", JSON.stringify(userData));
-        localStorage.setItem("authorizationToken", userToken);
+        localStorage.setItem('user', JSON.stringify(userData));
+        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTHORIZATION_TOKEN, userToken);
     };
 
     const logout = () => {
         setUser(null);
         setToken(null);
-        localStorage.removeItem("user");
-        localStorage.removeItem("authorizationToken");
+        localStorage.removeItem('user');
+        localStorage.removeItem(LOCAL_STORAGE_KEYS.AUTHORIZATION_TOKEN);
         navigate('/login')
     };
 

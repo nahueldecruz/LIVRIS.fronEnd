@@ -28,9 +28,7 @@ function ReviewsListComponent({ refreshKey }) {
         setIsMine(id === user._id.toString())
     }, [userId, user])
 
-    useEffect(() => {
-        if(!user && userId === 'me') return
-
+    const fetchReviews = () => {
         if(bookId){
             sendRequest(async () => await ReviewsService.getByBookId(bookId))
         } else if(userId && userId === 'me') {
@@ -38,6 +36,12 @@ function ReviewsListComponent({ refreshKey }) {
         } else if(userId) {
             sendRequest(async () => await ReviewsService.getByUserId(idToCompare))
         }
+    }
+
+    useEffect(() => {
+        if(!user && userId === 'me') return
+
+        fetchReviews()
     }, [idToCompare, bookId, refreshKey])
 
     useEffect(() => {
@@ -54,12 +58,16 @@ function ReviewsListComponent({ refreshKey }) {
                             return (
                                 <ReviewComponent 
                                     key={rev.review_id}
+                                    reviewId={rev.review_id}
                                     rating={rev.review_rating}
                                     content={rev.review_content}
                                     createdAt={rev.review_created_at}
                                     userName={rev.user_name}
                                     userUrlImage={rev.user_url_image}
                                     bookTitle={!bookId ? rev.book_title : null}
+                                    isEdited={rev.review_is_edited}
+                                    userOwnerId={rev.user_id}
+                                    fetchReviews={fetchReviews}
                                 />
                             )
                         })

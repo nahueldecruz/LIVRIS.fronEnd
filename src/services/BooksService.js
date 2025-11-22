@@ -1,5 +1,5 @@
 import ENVIRONMENT from "../config/enviroment"
-import { CONTENT_TYPE_VALUES, HEADERS, HTTP_METHODS } from "../constants/http"
+import { CONTENT_TYPE_VALUES, getAuthorizationHeader, HEADERS, HTTP_METHODS } from "../constants/http"
 
 class BooksService {
     static async getAll({ page }) {
@@ -12,6 +12,7 @@ class BooksService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -34,6 +35,7 @@ class BooksService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -52,6 +54,7 @@ class BooksService {
             {
                 method: HTTP_METHODS.GET,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 }
             }
@@ -74,6 +77,7 @@ class BooksService {
         const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/books/save-book`, {
                 method: HTTP_METHODS.POST,
                 headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
                 },
                 body: JSON.stringify(body)
