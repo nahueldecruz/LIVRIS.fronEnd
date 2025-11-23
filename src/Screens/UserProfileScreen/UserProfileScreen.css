@@ -12,11 +12,29 @@
     background-color: var(--color-secondary);
     align-items: center;
     box-shadow: var(--box-shadow-strong);
+    position: relative;
+}
+
+.user-profile__add-friend {
+    background: none;
+    z-index: 10;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.user-profile__add-friend__icon {
+    color: var(--color-light);
+    font-size: var(--font-sz-xl);
 }
 
 .user-profile__user__image-container {
     max-width: 5rem;
+    min-width: 5rem;
     max-height: 5rem;
+    min-height: 5rem;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: var(--box-shadow);

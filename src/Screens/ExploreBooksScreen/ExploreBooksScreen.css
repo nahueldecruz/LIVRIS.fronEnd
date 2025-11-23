@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    color: var(--color-secondary);
 }
 
 .explore-screen__text {
@@ -20,9 +21,8 @@
 }
 
 .explore-screen__icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: var(--color-primary);
+    font-size: var(--font-sz-3xl);
+    color: var(--color-secondary);
 }
 
 .explore-screen__title {
@@ -55,8 +55,8 @@
 }
 
 .explore__form__input:focus {
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
     outline: none;
 }
 
@@ -77,11 +77,11 @@
 }
 
 .explore__form__input:focus::placeholder {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .explore__form:focus-within .explore__form__icon-button {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .exlore-screen__books-container {
@@ -127,14 +127,14 @@
 
 .explore__pagination__button {
     cursor: pointer;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-secondary);
     border-radius: var(--border-rad);
     padding: 0.2rem;
     background: none;
     font-size: var(--font-sz-m);
     font-weight: 600;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
 }
 
 .explore__pagination__button:disabled {

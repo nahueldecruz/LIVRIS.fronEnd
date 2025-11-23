@@ -86,8 +86,14 @@
 }
 
 .review__modal__title {
-    color: var(--color-dark);
+    color: var(--color-gray-dark);
     font-family: var(--font-fm-serif);
+}
+
+.review__modal__text {
+    color: var(--color-gray-dark);
+    font-size: var(--font-sz-s);
+    font-weight: 500;
 }
 
 .review__modal__buttons-container {
@@ -103,6 +109,14 @@
     border-radius: var(--border-rad);
     padding: 0.2rem;
     box-shadow: var(--box-shadow);
+    font-weight: 500;
+    color: var(--color-gray-dark);
+}
+
+.rmb--delete {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    border: none;
 }
 
 .review__rating {

@@ -5,17 +5,22 @@ import useFetch from '../../hooks/useFetch'
 import { useNavigate, useParams } from 'react-router-dom'
 import BooksService from '../../services/BooksService'
 import BookLoaderComponent from '../../Components/BookLoaderComponent/BookLoaderComponent'
-import { LuArrowLeft, LuStar } from 'react-icons/lu'
+import { LuArrowLeft, LuBookmarkCheck, LuBookMarked, LuBookmarkPlus, LuBookOpen, LuStar } from 'react-icons/lu'
 import ButtonAddReviewComponent from '../ButtonAddReviewComponent/ButtonAddReviewComponent'
 import { useAuth } from '../../Contexts/AuthContext'
 import ReviewsService from '../../services/ReviewsService'
+import UserBookService from '../../services/UserBookService'
+import { STATUS_USER_BOOK } from '../../constants/statusUserBooks'
 
 function BookDetailComponent({ onReviewCreated, bookId, refreshKey }) {
     const { selectedBook } = useBooks()
     const [ bookDetail, setBookDetail ] = useState(selectedBook)
     const { user } = useAuth()
     const navigate = useNavigate()
-    
+
+    const [ status, setStatus ] = useState('')
+    const [ showStatusOptions, setShowStatusOptions ] = useState(false)
+
     const [ isReviewed, setIsReviewed ] = useState(false)
     const isReviewedFetch = useFetch()
     
@@ -50,6 +55,23 @@ function BookDetailComponent({ onReviewCreated, bookId, refreshKey }) {
             setBookDetail(response.data.book)
         }
     }, [response])
+
+    const statusBookFetch = useFetch()
+
+    const handleStatusBook = (status) => {
+        statusBookFetch.sendRequest(async () => await UserBookService.setStatus({ status, bookId }))
+        setShowStatusOptions(false)
+    }
+
+    useEffect(() => {
+        statusBookFetch.sendRequest(async () => await UserBookService.getByUserIdAndBookId({ status, bookId }))
+    }, [])
+
+    useEffect(() => {
+        if (statusBookFetch.response?.data?.status) {
+            setStatus(statusBookFetch.response?.data?.status.status)
+        }
+    }, [statusBookFetch.response])
     
     return (
         <div className='book-detail'>
@@ -75,6 +97,46 @@ function BookDetailComponent({ onReviewCreated, bookId, refreshKey }) {
                                         {
                                             bookDetail.published_year && <span className='book-detail__info__published-year'>{bookDetail.published_year}</span>
                                         }
+                                        <div className='book-detail__meta__status'>
+                                            <button 
+                                                className='book-detail__status-options__button' 
+                                                onClick={() => setShowStatusOptions(!showStatusOptions)}
+                                            >
+                                                <LuBookmarkPlus className='book-detail__status-options__icon'/>
+                                                { 
+                                                    status === STATUS_USER_BOOK.READ ? "Leído" : 
+                                                    status === STATUS_USER_BOOK.READING ? "Leyendo" :
+                                                    status === STATUS_USER_BOOK.WANT_TO_READ ? "Quiero leer" : "Agregar a la lista"
+                                                }
+                                            </button>
+                                            {
+                                                showStatusOptions && (
+                                                    <div className='book-detail__status-options'>
+                                                        <button 
+                                                            className='book-detail__status' 
+                                                            onClick={() => handleStatusBook(STATUS_USER_BOOK.READING)}
+                                                        >
+                                                            <LuBookOpen className='book-detail__status__icon bdsi--reading'/>
+                                                            Leyendo
+                                                        </button>
+                                                        <button 
+                                                            className='book-detail__status' 
+                                                            onClick={() => handleStatusBook(STATUS_USER_BOOK.READ)}
+                                                        >
+                                                            <LuBookmarkCheck className='book-detail__status__icon bdsi--read'/>
+                                                            Leído
+                                                        </button>
+                                                        <button 
+                                                            className='book-detail__status' 
+                                                            onClick={() => handleStatusBook(STATUS_USER_BOOK.WANT_TO_READ)}
+                                                        >
+                                                            <LuBookmarkPlus className='book-detail__status__icon bdsi--want-to-read'/>
+                                                            Quiero leer
+                                                        </button>
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
                                     </div>
                                     {
                                         <div className='book-detail__rating-container'>

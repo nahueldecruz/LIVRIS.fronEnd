@@ -39,7 +39,7 @@ function ExploreBooksScreen() {
         setSearchQuery(newQuery)
         setPage(1)
         sendRequest(async () => await BooksService.getByQuery({ query: newQuery, page: 1 }))
-    };
+    }
     
     useEffect(() => {
         if(!searchQuery){
@@ -115,7 +115,7 @@ function ExploreBooksScreen() {
                     <div className="explore__pagination">
                         <button className='explore__pagination__button' disabled={page === 1} onClick={() => setPage(page - 1)}>Anterior</button>
                         <span className='explore__pagination__span' >Página {page}</span>
-                        <button className='explore__pagination__button' disabled={response.data.books.length < 9 || response.data.books.length === 0} onClick={() => setPage(page + 1)}>Siguiente</button>
+                        <button className='explore__pagination__button' disabled={response.data.books.length < 9} onClick={() => setPage(page + 1)}>Siguiente</button>
                     </div>
                 )
             }

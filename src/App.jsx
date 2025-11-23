@@ -16,6 +16,8 @@ import UserProfileLayout from './Layouts/UserProfileLayout/UserProfileLayout.jsx
 import ReviewsListComponent from './Components/ReviewsListComponent/ReviewsListComponent.jsx'
 import CommunityScreen from './Screens/CommunityScreen/CommunityScreen.jsx'
 import InDevelopmentComponent from './Components/InDevelopmentComponent/InDevelopmentComponent.jsx'
+import ListsBooksScreen from './Screens/ListsBooksScreen/ListsBooksScreen.jsx'
+import UserBooks from './Components/UserBooks/UserBooks.jsx'
 
 function App() {
 
@@ -36,9 +38,11 @@ function App() {
                   <Route path="/book-detail/:book_id" element={<BookDetailScreen />} />
 
                   <Route path="/user-detail/:user_id" element={<UserProfileLayout />}>
-                    <Route path="/user-detail/:user_id/reviews" element={<ReviewsListComponent />}/>
-                    <Route path="/user-detail/:user_id/comments" element={<InDevelopmentComponent />}/>
-                    <Route path="/user-detail/:user_id/lists-books" element={<InDevelopmentComponent />}/>
+                    <Route path="reviews" element={<ReviewsListComponent />}/>
+                    <Route path="comments" element={<InDevelopmentComponent />}/>
+                    <Route path="lists-books" element={<ListsBooksScreen />}>
+                      <Route path=":status" element={<UserBooks />}/>
+                    </Route>
                   </Route>
                 </Route>
               </Route>

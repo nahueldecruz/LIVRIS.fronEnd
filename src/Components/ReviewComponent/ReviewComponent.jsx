@@ -98,7 +98,7 @@ function ReviewComponent({ reviewId, userName, userUrlImage, content, createdAt,
                                                 <h3 className='review__modal__title'>¿Eliminar reseña?</h3>
                                                 <p className='review__modal__text'>Esta acción no se puede deshacer.</p>
                                                 <div className='review__modal__buttons-container'>
-                                                    <button className='review__modal__button' onClick={onDelete}>
+                                                    <button className='review__modal__button rmb--delete' onClick={onDelete}>
                                                         Sí, eliminar
                                                     </button>
 

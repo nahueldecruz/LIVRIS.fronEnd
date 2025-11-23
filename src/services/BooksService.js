@@ -4,10 +4,9 @@ import { CONTENT_TYPE_VALUES, getAuthorizationHeader, HEADERS, HTTP_METHODS } fr
 class BooksService {
     static async getAll({ page }) {
         const maxResults = 9
-        const startIndex = (page - 1) * maxResults
 
         const responseHttp = await fetch(`
-            ${ENVIRONMENT.URL_API}/api/books?page=${page}&startIndex=${startIndex}&maxResults=${maxResults}
+            ${ENVIRONMENT.URL_API}/api/books?page=${page}&maxResults=${maxResults}
         `,
             {
                 method: HTTP_METHODS.GET,
@@ -27,10 +26,9 @@ class BooksService {
 
     static async getByQuery({ query, page = 1 }) {
         const maxResults = 9
-        const startIndex = (page - 1) * maxResults
         
         const responseHttp = await fetch(`
-                ${ENVIRONMENT.URL_API}/api/books/search?q=${encodeURIComponent(query)}&page=${page}&startIndex=${startIndex}&maxResults=${maxResults}
+                ${ENVIRONMENT.URL_API}/api/books/search?q=${encodeURIComponent(query)}&page=${page}&maxResults=${maxResults}
             `,
             {
                 method: HTTP_METHODS.GET,

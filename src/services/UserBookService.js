@@ -1,15 +1,21 @@
 import ENVIRONMENT from "../config/enviroment"
 import { CONTENT_TYPE_VALUES, getAuthorizationHeader, HEADERS, HTTP_METHODS } from "../constants/http"
 
-class UsersService {
-    static async getById(userId) {
-        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/users/${userId}`,
+class UserBookService {
+
+    static async setStatus({ status, bookId }) {
+        const body = {
+            status
+        }
+
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/books/${bookId}/status`,
             {
-                method: HTTP_METHODS.GET,
+                method: HTTP_METHODS.PATCH,
                 headers: {
                     [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
                     [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
-                }
+                },
+                body: JSON.stringify(body)
             }
         )
         
@@ -18,13 +24,13 @@ class UsersService {
         if (!responseData.ok){
             throw responseData
         }
+        
         return responseData
     }
 
-    static async getByQuery({ query }, page) {
-        const maxResults = 12
+    static async getByUserIdAndBookId({ bookId }) {
 
-        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/users/search?search=${query}&page=${page}&maxResults=${maxResults}`,
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/books/${bookId}/status`,
             {
                 method: HTTP_METHODS.GET,
                 headers: {
@@ -39,8 +45,9 @@ class UsersService {
         if (!responseData.ok){
             throw responseData
         }
+        
         return responseData
     }
 }
 
-export default UsersService
+export default UserBookService

@@ -1,0 +1,53 @@
+.loader__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.loader__icon-wrapper {
+    position: relative;
+}
+
+.loader__icon {
+    font-size: var(--font-sz-3xl);
+    animation: spin-circle 2s linear infinite, color-shift 2s ease-in-out infinite;
+}
+
+.loader__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-gray);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin-circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes color-shift {
+    0%,
+    100% {
+        color: var(--color-primary);
+    }
+    50% {
+        color: var(--color-gray);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -8,6 +8,7 @@ import { LuBookOpen, LuPencilLine } from 'react-icons/lu'
 import UsersService from '../../services/UsersService.js'
 import useFetch from '../../hooks/useFetch.jsx'
 import ReviewsService from '../../services/ReviewsService.js'
+import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx'
 
 function ReviewsListComponent({ refreshKey }) {
 
@@ -52,7 +53,7 @@ function ReviewsListComponent({ refreshKey }) {
 
     return (
         <div className='reviews-list'>
-            {   loading ? <div>CARGANDOO...</div> : (
+            {   loading ? <LoaderComponent /> : (
                     response?.data?.reviews.length > 0 ? (
                         response.data.reviews.map((rev) => {
                             return (

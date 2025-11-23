@@ -28,6 +28,11 @@
     --color-gray-dark: #5a5a5a;
     --color-light: #ffffff;
     --color-golden: #e4c723;
+    --color-yellow: #e9ff24;
+    --color-pink: #e753a5;
+    --color-green: #00be10;
+    --color-red: #f73232;
+    --color-light-blue: #01bdc4;
 
     --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --box-shadow-strong: 3px 10px 20px 10px rgb(0 0 0 / 0.1);

@@ -1,0 +1,33 @@
+.lists-books-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-books__links-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.4rem 0.2rem;
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--border-rad);
+    box-shadow: var(--box-shadow);
+}
+
+.list-books__link {
+    font-size: var(--font-sz-s);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-dark);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lbs--active {
+    background-color: var(--color-pink);
+    color: var(--color-yellow);
+    border-radius: var(--border-rad);
+    border: 1px solid var(--color-yellow);
+    padding: 0.2rem;
+}
