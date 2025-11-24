@@ -14,17 +14,23 @@
 }
 
 .list-books__link {
-    font-size: var(--font-sz-s);
+    font-size: var(--font-sz-m);
     font-weight: 500;
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-gray-dark);
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.list-books__link:hover {
+    background-color: rgba(104, 104, 104, 0.1);
+    border-radius: var(--border-rad);
+}
+
 .lbs--active {
+    pointer-events: none;
     background-color: var(--color-pink);
     color: var(--color-yellow);
     border-radius: var(--border-rad);

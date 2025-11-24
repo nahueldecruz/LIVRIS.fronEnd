@@ -15,6 +15,7 @@
 }
 
 .register-screen__form {
+    width: 27rem;
     display: flex;
     flex-direction: column;
     max-width: 28rem;
@@ -36,7 +37,7 @@
 }
 
 .register-screen__form__input {
-    font-size: var(--font-sz-xl);
+    font-size: var(--font-sz-l);
     padding: 1rem 0.625rem;
     background-color: var(--color-light);
     border-radius: var(--border-rad);
