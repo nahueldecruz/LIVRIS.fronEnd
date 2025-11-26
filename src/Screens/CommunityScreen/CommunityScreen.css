@@ -94,6 +94,7 @@
     align-self: center;
     align-items: center;
     gap: 0.5rem;
+    text-align: center;
 }
 
 .comunnity__message__icon {
@@ -141,4 +142,28 @@
 
 .comunnity__pagination__span {
     font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .community__header {
+        align-self: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .community__header__title {
+        font-size: var(--font-sz-2xl);
+    }
+
+    .community__header__icon {
+        font-size: var(--font-sz-2xl);
+    }
+
+    .community__header__text {
+        font-size: var(--font-sz-l);
+        text-align: center;
+    }
 }

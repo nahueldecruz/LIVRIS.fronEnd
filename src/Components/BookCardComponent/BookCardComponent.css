@@ -96,3 +96,45 @@
     font-size: var(--font-sz-xs);
     color: var(--color-gray);
 }
+
+@media (max-width: 768px) {
+    .book-card {
+        width: 60%;
+    }
+
+    .book-card__title {
+        font-size: var(--font-sz-xl);
+    }
+
+    .book-card__author {
+        font-size: var(--font-sz-l);
+    }
+
+    .book-card__category {
+        font-size: var(--font-sz-l);
+        width: 15rem;
+        align-self: center;
+    }
+
+    .book-card__rating {
+        align-self: center;
+    }
+
+    .book-card__icon-star {
+        font-size: var(--font-sz-2xl);
+    }
+
+    .book-card__rating-average {
+        font-size: var(--font-sz-xl);
+    }
+
+    .book-card__rating-reviews {
+        font-size: var(--font-sz-l);
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        width: 90%;
+    }
+}

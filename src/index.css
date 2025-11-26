@@ -7,6 +7,7 @@
     --font-sz-xl: 1.5rem; /* 24px */
     --font-sz-2xl: 2rem; /* 32px */
     --font-sz-3xl: 3rem; /* 48px */
+    --font-sz-4xl: 4rem; /* 64px */
 
     --font-fm-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
@@ -44,4 +45,22 @@
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin: 0;
     padding: 0;
+}
+
+@media (min-width: 1440px) {
+    * {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    * {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    * {
+        font-size: 16px;
+    }
 }

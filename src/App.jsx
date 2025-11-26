@@ -18,6 +18,10 @@ import CommunityScreen from './Screens/CommunityScreen/CommunityScreen.jsx'
 import InDevelopmentComponent from './Components/InDevelopmentComponent/InDevelopmentComponent.jsx'
 import ListsBooksScreen from './Screens/ListsBooksScreen/ListsBooksScreen.jsx'
 import UserBooks from './Components/UserBooks/UserBooks.jsx'
+import BookLoaderComponent from './Components/BookLoaderComponent/BookLoaderComponent.jsx'
+import ButtonLoaderComponent from './Components/ButtonLoaderComponent/ButtonLoaderComponent.jsx'
+import UserLoaderComponent from './Components/UserLoaderComponent/UserLoaderComponent.jsx'
+import LoaderComponent from './Components/LoaderComponent/LoaderComponent.jsx'
 
 function App() {
 

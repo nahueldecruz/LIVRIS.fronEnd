@@ -91,3 +91,10 @@
     border-radius: var(--border-rad);
     width: 7rem;
 }
+
+@media (max-width: 480px) {
+    .register-screen__form {
+        width: 100%;
+        border: none;
+    }
+}

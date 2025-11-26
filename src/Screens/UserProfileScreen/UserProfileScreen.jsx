@@ -52,13 +52,6 @@ function UserProfileScreen() {
                 !userData ? <UserLoaderComponent /> : (
                     <div className='user-profile__container'>
                         <div className='user-profile__user'>
-                            {
-                                !isMine && (
-                                    <button className='user-profile__add-friend'>
-                                        <LuUserPlus className='user-profile__add-friend__icon' />
-                                    </button>
-                                )
-                            }
                             <div className='user-profile__user__image-container'>
                                 <img src={userData.image_url} alt={`Imagen de perfil de ${userData.name}`} />
                             </div>

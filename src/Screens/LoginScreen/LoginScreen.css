@@ -95,3 +95,10 @@
     color: var(--color-primary);
     border-radius: var(--border-rad);
 }
+
+@media (max-width: 480px) {
+    .login-screen__form {
+        width: 100%;
+        border: none;
+    }
+}

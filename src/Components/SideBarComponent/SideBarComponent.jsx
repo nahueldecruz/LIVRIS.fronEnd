@@ -1,10 +1,25 @@
 import { NavLink } from 'react-router-dom'
 import './SideBarComponent.css'
 import { useAuth } from '../../Contexts/AuthContext'
+import { useSideBar } from '../../Contexts/SideBarContext'
 import { LuBookOpen, LuHouse, LuLogOut, LuUser, LuUsers } from "react-icons/lu";
+import { FiSidebar } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
 
 function SideBarComponent() {
     const { logout, user } = useAuth()
+    const { toggleSideBar, closeSideBar } = useSideBar()
+    
+    const widthScreen = window.innerWidth
+    const [ isMobile, setIsMobile ] = useState(widthScreen <= 768)
+
+    useEffect(() => {
+        if (widthScreen <= 768) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }, [ widthScreen ])
     
     return (
         <div className='side-bar'>
@@ -14,17 +29,20 @@ function SideBarComponent() {
                     <h1 className='side-bar__title'>LiVris</h1>
                     <span className='side-bar__span'>Literatura Virtual</span>
                 </div>
+                <button className='side-bar__header__button'>
+                    <FiSidebar className='side-bar__header__icon' onClick={toggleSideBar}/>
+                </button>
             </div>
             <div className='side-bar__links-container'>
-                <NavLink className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={'/books'}>
+                <NavLink onClick={isMobile && closeSideBar} className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={'/books'}>
                     <LuHouse className='side-bar__link-icon'/>
                     <span className='side-bar__link'>Explorar Libros</span>
                 </NavLink>
-                <NavLink className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={'/community'}>
+                <NavLink onClick={isMobile && closeSideBar} className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={'/community'}>
                     <LuUsers className='side-bar__link-icon'/>
                     <span className='side-bar__link'>Usuarios</span>
                 </NavLink>
-                <NavLink className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={`/user-detail/me`}>
+                <NavLink onClick={isMobile && closeSideBar} className={({ isActive }) => `side-bar__icon-link-container ${isActive ? 'sbi--active' : ''}`} to={`/user-detail/me`}>
                     <LuUser className='side-bar__link-icon'/>
                     <span className='side-bar__link'>Mi Perfil</span>
                 </NavLink>

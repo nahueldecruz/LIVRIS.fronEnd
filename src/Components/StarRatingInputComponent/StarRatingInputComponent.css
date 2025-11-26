@@ -4,7 +4,8 @@
 }
 
 .star-rating-input__star {
-    font-size: var(--font-sz-xs);
+    width: 2rem;
+    height: 2rem;
     color: var(--color-gray);
     fill: var(--color-gray-light);
     transition: 0.1s;
