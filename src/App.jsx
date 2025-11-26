@@ -17,11 +17,6 @@ import ReviewsListComponent from './Components/ReviewsListComponent/ReviewsListC
 import CommunityScreen from './Screens/CommunityScreen/CommunityScreen.jsx'
 import InDevelopmentComponent from './Components/InDevelopmentComponent/InDevelopmentComponent.jsx'
 import ListsBooksScreen from './Screens/ListsBooksScreen/ListsBooksScreen.jsx'
-import UserBooks from './Components/UserBooks/UserBooks.jsx'
-import BookLoaderComponent from './Components/BookLoaderComponent/BookLoaderComponent.jsx'
-import ButtonLoaderComponent from './Components/ButtonLoaderComponent/ButtonLoaderComponent.jsx'
-import UserLoaderComponent from './Components/UserLoaderComponent/UserLoaderComponent.jsx'
-import LoaderComponent from './Components/LoaderComponent/LoaderComponent.jsx'
 
 function App() {
 
@@ -45,7 +40,7 @@ function App() {
                     <Route path="reviews" element={<ReviewsListComponent />}/>
                     <Route path="comments" element={<InDevelopmentComponent />}/>
                     <Route path="lists-books" element={<ListsBooksScreen />}>
-                      <Route path=":status" element={<UserBooks />}/>
+                      <Route path=":status" element={<InDevelopmentComponent />}/>
                     </Route>
                   </Route>
                 </Route>
