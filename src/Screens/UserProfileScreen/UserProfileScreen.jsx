@@ -83,7 +83,7 @@ function UserProfileScreen() {
                                 <LuMessageCircle className='user-profile__link__icon'/>
                                 <span className='user-profile__link__span'>{isMine ? "Mis Comentarios" : "Sus Comentarios"}</span>
                             </NavLink>
-                            <NavLink className={({ isActive }) => `user-profile__link ${isActive ? 'upl--active' : ''}`} to={`/user-detail/${userId}/lists-books/reading`}>
+                            <NavLink className={({ isActive }) => `user-profile__link ${isActive ? 'upl--active' : ''}`} to={`/user-detail/${userId}/lists-books`}>
                                 <PiBooksLight className='user-profile__link__icon'/>
                                 <span className='user-profile__link__span'>{isMine ? "Mis Listas" : "Sus Listas"}</span>
                             </NavLink>
