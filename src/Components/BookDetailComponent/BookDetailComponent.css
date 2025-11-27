@@ -32,6 +32,8 @@
 }
 
 .book-detail__image-container {
+    display: flex;
+    justify-content: center;
     flex: 1;
     height: 80%;
     border-radius: var(--border-rad-l);

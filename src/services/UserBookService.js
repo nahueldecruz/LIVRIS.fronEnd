@@ -28,7 +28,7 @@ class UserBookService {
         return responseData
     }
 
-    static async getByUserIdAndBookId({ bookId }) {
+    static async getByUserIdAndBookId(bookId) {
 
         const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/books/${bookId}/status`,
             {
@@ -46,6 +46,44 @@ class UserBookService {
             throw responseData
         }
         
+        return responseData
+    }
+
+    static async getByUserIdAndStatus({ userId, status }) {
+
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/users/${userId}/books/${status}`,
+            {
+                method: HTTP_METHODS.GET,
+                headers: {
+                    [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
+                    [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON
+                }
+            }
+        )
+        
+        const responseData = await responseHttp.json()
+
+        if (!responseData.ok){
+            throw responseData
+        }
+        
+        return responseData
+    }
+
+    static async deleteById(statusId) {
+        const responseHttp = await fetch(`${ENVIRONMENT.URL_API}/api/user_book/${statusId}`, {
+            method: HTTP_METHODS.DELETE,
+            headers: {
+                [HEADERS.AUTHORIZATION]: getAuthorizationHeader(),
+                [HEADERS.CONTENT_TYPE]: CONTENT_TYPE_VALUES.JSON,
+            }
+        })
+
+        const responseData = await responseHttp.json()
+
+        if(!responseData.ok){
+            throw responseData
+        }
         return responseData
     }
 }

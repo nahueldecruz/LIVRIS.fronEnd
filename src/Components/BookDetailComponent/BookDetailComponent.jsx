@@ -64,7 +64,7 @@ function BookDetailComponent({ onReviewCreated, bookId, refreshKey }) {
     }
 
     useEffect(() => {
-        statusBookFetch.sendRequest(async () => await UserBookService.getByUserIdAndBookId({ status, bookId }))
+        statusBookFetch.sendRequest(async () => await UserBookService.getByUserIdAndBookId(bookId))
     }, [])
 
     useEffect(() => {
